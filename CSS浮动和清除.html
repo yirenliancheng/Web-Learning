@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web-learning</title>
+    <style type="text/css">
+        
+        section {
+            border:1px solid blue;
+            margin: 0 0 10px 0;
+            /*overflow: hidden;实现父元素包围住内部浮动元素的方法一*/
+            /*float: left; 实现父元素包围住内部浮动元素的方法二*/
+        }
+        p {
+            margin: 0;
+            /*border: 1px solid red;*/
+            
+        }
+        img {
+            float:left;/*图片左对齐*/
+            height: 100px;
+            width: 100px;
+            margin: 0 4px 0 0;
+        }
+        footer {
+            border:1px solid red;
+        }
+        /*.clear-folat{
+            clear:left;实现父元素包围住内部浮动元素的方法三
+        }*/
+        .clearfix:after{
+            content: ".";
+            display: none;
+            height: 0;
+            visibility: hidden;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <!--浮动文本绕排图片-->
+    <section class="clearfix">
+    <img src="./img/smallgirl.jpg">
+    <p class="clearfix">这个图片是关于一个小女孩的这个图片是关于一个小女孩的这个图片是关于一个小女孩的这个图片是关于一个小女孩的
+    </br>这个图片是关于一个小女孩的这个图片是关于一个小女孩的这个图片是关于一个小女孩的
+    </br>这个图片是关于一个小女孩的这个图片是关于一个小女孩的这个图片是关于一个小女孩的
+    </p>
+    <img src="./img/smallgirl.jpg">
+    <p class="clearfix">这个图片是关于一个小女孩的这个图片是关于一个小女孩的这个图片是关于一个小女孩的这个图片是关于一个小女孩的
+    </br>这个图片是关于一个小女孩的这个图片是关于一个小女孩的这个图片是关于一个小女孩的
+    </br>这个图片是关于一个小女孩的这个图片是关于一个小女孩的这个图片是关于一个小女孩的
+    </p>
+    <img src="./img/smallgirl.jpg">
+    <p class="clearfix">这个图片是关于一个小女孩的这个图片是关于一个小女孩的这个图片是关于一个小女孩的这个图片是关于一个小女孩的
+    </br>这个图片是关于一个小女孩的这个图片是关于一个小女孩的这个图片是关于一个小女孩的
+    </br>这个图片是关于一个小女孩的这个图片是关于一个小女孩的这个图片是关于一个小女孩的
+    </p>
+    <div class="clear-folat"></div>       
+    </section>
+    <footer>Here is footer</footer>
+<script>
+</script>
+</body>
+</html>

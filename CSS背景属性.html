@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS中的背景显示</title>
+    <style type="text/css">
+    body {
+        width:auto;
+        height: auto;
+        /*
+        background-image: url(./img/smallgirl.jpg);
+        background-position:center center;
+        background-repeat:no-repeat;
+        background-size:50%;
+        background-color: greenyellow;
+        background-attachment: fixed;
+        */
+        background:no-repeat fixed center/cover url("./img/smallgirl.jpg"); /*size只能跟在position后面 并且用/隔开*/
+    }
+    #d1 {
+        width: 200px;
+        height:120px;
+        position: relative;
+        top:500px;
+        left:500px;
+        background: linear-gradient(45deg,red 25%,green 50%,blue 75%,yellow );/*线性渐变*/
+    }
+    .d2{
+        width: 200px;
+        height:120px;
+        position:relative;
+        top:380px;
+        left:800px;
+        background:-webkit-radial-gradient(50px 30px,circle,yellow 25%,red 75%,green);/*放射性渐变*/
+    }
+    </style>
+</head>
+<body>
+    <div id="d1"></div>
+    <div class="d2"></div>
+</body>
+</html>
