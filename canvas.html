@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas的使用学习</title>
+</head>
+<body>
+    <p id="support"></p>
+    <canvas id="diagonal" width="400" height="400" style=" border:1px solid red;"></canvas>
+    <script>
+    //测试当前浏览器是否支持canvas
+    try{
+        document.createElement('canvas').getContext("2d");
+        document.getElementById("support").innerHTML="HTML5 Canvas is supported in your browser."
+    }catch(e){
+        document.getElementById("support").innerHTML="HTML5 Canvas is not supported in your browser."
+    }
+    //在canvas上面绘图
+    function drawDiagonal(){
+        //取得canvas元素及其绘图上下文
+        var canvas=document.getElementById('diagonal');
+        var context=canvas.getContext('2d');
+        //保存当前绘图
+        context.save();
+        //向右下方移动绘图上下文
+        context.translate(70,140);
+        //用绝对坐标来创建一条路径
+        context.beginPath();
+        context.moveTo(0,0);
+        context.lineTo(70,-70);
+        //将这条线绘制到canvas上
+        context.stroke();
+        //恢复原有的绘图状态
+        context.restore();
+    }
+    function createCanopyPath(context){
+        context.beginPath();
+        context.moveTo(-25,-50);
+        context.lineTo(-10,-80);
+        context.lineTo(-20,-80);
+        context.lineTo(-5,-110);
+        context.lineTo(-15,-110);
+        context.lineTo(0,-140);
+        context.lineTo(15,-110);
+        context.lineTo(5,-110);
+        context.lineTo(20,-80);
+        context.lineTo(10,-80);
+        context.lineTo(25,-50);
+        context.closePath();
+    }
+    function drawTrails(){
+        var canvas=document.getElementById('diagonal');
+        var context=canvas.getContext('2d');
+        context.save();
+        //创建渐变的三阶纹理
+        var trunkGradient=context.createLinearGradient(-5,-50,5,-50);
+        trunkGradient.addColorStop(0,'#663300');
+        trunkGradient.addColorStop(0.4,"#996600");
+        trunkGradient.addColorStop(1,"#552200");
+
+        context.translate(130,250);
+        createCanopyPath(context);
+        context.lineWidth=4;//设置线宽
+        context.lineJoin="round";//平滑路径的结合点
+        context.strokeStyle="#663300";//设置线条颜色
+        context.fillStyle="#339900";//设置内部填充颜色
+        context.fill();
+        //context.fillStyle="#663300";//更新填充的颜色
+        context.fillStyle=trunkGradient;
+        //context.drawImage(bark,-5,-50,10,50);//为矩形区域添加背景图片
+        context.fillRect(-5,-50,10,50);//直接绘制矩形区域
+        //下面创建垂直渐变，以用作树冠在树干上投影
+        var canopyShadow=context.createLinearGradient(0,-50,0,0);
+        canopyShadow.addColorStop(0,'rgba(0,0,0,0.5)');
+        canopyShadow.addColorStop(0.2,'rgba(0,0,0,0.0)');
+        context.fillStyle=canopyShadow;
+        context.fillRect(-5,-50,10,50);
+        context.stroke();
+        context.restore();
+        //下面绘制林荫小道
+        context.save();
+        context.translate(-10,350);
+        context.beginPath();
+        context.moveTo(0,0);
+        context.quadraticCurveTo(170,-50,260,-190);//绘制曲线，第一条曲线向右上弯曲
+        context.quadraticCurveTo(310,-250,410,-250);//绘制第二条曲线，向右下弯曲
+        context.strokeStyle="#663300";
+        //用背景图替代线条图案的方法 context.strokeStyle=context.createPattern(bark,'repeat');
+        context.lineWidth=20;
+        context.stroke();
+        context.restore();
+        context.save();
+        context.font="60px impact";
+        context.fillStyle="#996600";
+        context.textAlign='center';
+        context.fillText('Happy Trails',200,60,400);
+        context.stroke();
+        context.restore();
+    }
+    var bark=new Image();
+    bark.src="./img/smallgirl.jpg";
+    bark.onload=function(){
+        drawTrails();
+    }
+    //window.addEventListener("load",drawDiagonal,true);
+    //window.addEventListener("load",drawTrails,true);
+</script>
+</body>
+</html>
