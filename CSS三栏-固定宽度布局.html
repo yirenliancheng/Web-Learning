@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS三栏-固定宽度布局</title>
+    <style type="text/css">
+      #wrapper{
+          width:100%;
+          margin:0 auto;
+          border:1px solid red;
+          float: left;
+      }
+      article{
+          display: table-cell;
+          width:80%;
+          background: #ffed53;
+          /*float:left;*/
+      }
+      nav{
+          display: table-cell;
+          width:10%;
+          /*float:left;*/
+      }
+      li {
+          list-style-type: none;
+      }
+      aside{
+          background:green;
+          color: aqua;
+          width:10%;
+          display: table-cell;
+          /*float:right;*/
+      }
+      header{
+          background: yellowgreen;
+          font-size:2.5rem;
+          font-style:oblique;
+      }
+      footer{
+          clear:both;
+          background: #ff5624;
+          text-align: center;
+      }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            Hello world
+        </header>
+        <nav>
+            <ul>
+                <li>第一行</li>
+                <li>第二行</li>
+                <li>第三行</li>
+                <li>第四行</li>
+            </ul>
+        </nav>
+        <article>
+            通过给整个外包装设定宽度值，并将其水平外边距设定为auto，这个单栏布局在页面上居中了。随着向里添加内容，这一栏的高度会相应增加。外包装中的article 元素本质上就是一个没有宽度的块级盒子（关于“没有宽度的盒子”，请参见3.2 节），它水平扩展填满了外包装。下面，我们再向外包装里添加一个导航元素，让它作为第二栏。
+        </article>
+        <aside>
+            hello world
+        </aside>
+        <footer>
+            Copy By Yirenliancheng!
+        </footer>
+    </div>
+</body>
+</html>
