@@ -3,94 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>表单</title>
-    <style type="text/css">
-         input:focus,textarea:focus{
-               border:1px solid #f00;
-               background-color: greenyellow;
-         }
-         #comment{
-             height:400px;
-         }
-    </style>
-    <script src="jQuery/jquery-3.4.1.min.js"></script>
+    <title>Document</title>
 </head>
 <body>
-    <!--单行文本框应用-->
-    <form action="#" method="POST" id="regForm">
-        <fieldset>
-            <legend>个人基本信息</legend>
-            <div>
-                <label for="username">名称：</label>
-                <input id="username" type="text">
-            </div>
-            <div>
-                <label for="pass">密码：</label>
-                <input id="pass" type="password">
-            </div>
-            <div>
-                <label for="msg">详细信息</label>
-                <textarea id="msg"></textarea>
-            </div>
-        </fieldset>
-    </form>
-    <!--多行文本框应用-->
-    <form>
-        <div class="msg">
-            <div class="msg_caption">
-                <span class="bigger">放大</span>
-                <span class="smaller">缩小</span>
-            </div>
-            <div>
-                <textarea id="comment" rows="8" cols="20">
-                </textarea>
-            </div>
-        </div>
-    </form>
-    <!--复选框应用-->
-    <form>
-        <input type="checkbox" value="足球">足球
-    </form>
-    <!--下拉框应用-->
-    <form>
-        <div class="content">
-            <select multiple id="select1" style="width: 100px;height: 60px;">
-                 <option value="1">选项1</option>
-                 <option value="2">选项2</option>
-                 <option value="3">选项3</option>
-                 <option value="4">选项4</option>
-                 <option value="5">选项5</option>
-                 <option value="6">选项6</option>
-            </select>
-        </div>
-    </form>
-    <!--网页选项卡-->
-    <div class="tab">
-        <div class="tab_menu">
-            <ul class="selected">时事</ul>
-            <li>体育</li>
-            <li>娱乐</li>
-        </div>
-        <div class="tab_box">
-            <div>时事</div>
-            <div class="hide">体育</div>
-            <div class="hide">娱乐</div>
-        </div>
-    </div>
-    <script>
-        $(function(){
-            var $comment=$("#comment");
-            $(".bigger").click(function(){
-                if($comment.height()<500){
-                    $comment.height($comment.height()+50);
-                }
-            });
-            $(".smaller").click(function(){
-                if($comment.height()>50){
-                    $comment.height($comment.height()-50);
-                }
-            })
-        })
-    </script>
+    
 </body>
 </html>
