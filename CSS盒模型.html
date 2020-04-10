@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS盒模型</title>
+    <style type="text/css">
+        #div0{
+            height:100px;
+            width: 200px;
+        }
+        #div1{
+            box-sizing: content-box;
+            background-color: red;
+            border:5px solid green;
+            margin: 5px;
+            padding:5px;
+            height: 50px;
+        }
+        #div2{
+            box-sizing:border-box;
+            background-color: red;
+            border:5px solid green;
+            margin: 5px;
+            padding:5px;
+            height: 40px;
+        }
+        #div3{
+            box-sizing:content-box; /*确定盒子的类型：是标准盒模型还是怪异盒模型*/
+            height: 100px;
+            width: 200px;
+            display: block;/*确定盒子的显示形式：inline：行内；block：块状；none：隐藏；
+                                  inline-block：可以设置宽度的行内元素；inline-table：围绕表格；
+                                  list-item：作为列表显示；table-cell：作为表格中的单元格等*/
+            overflow: hidden;/*设置容纳不下的元素的显示方式：hidden：隐藏；scroll：滚动条；auto：按需滚动条；visible：照常显示*/
+            text-overflow: ellipsis;/*设置容纳不下的文字显示方式：ellipsis:以省略号显示*/
+            box-shadow: 10px 5px 5px gray;/*设置盒子的阴影：横向距离；纵向距离；模糊半径；阴影颜色*/ 
+            margin: 5px;
+            border: 1px solid red;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div0">
+        <div id="div1"></div>
+        <div id="div2"></div>
+    </div>
+    <div id="div3">
+        <p>这个盒子用来概括盒子的属性</p>
+    </div>
+</body>
+</html>
