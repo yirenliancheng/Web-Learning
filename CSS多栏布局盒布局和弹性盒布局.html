@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多栏布局</title>
+    <style type="text/css">
+        #div1{
+            background-color: aquamarine;
+            -webkit-column-count: 2;
+            -webkit-column-width: 50em;
+            -webkit-column-gap: 10px;
+            -webkit-column-rule: 2px solid red;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        p{
+            font-size: 0.8rem;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-style: italic;
+        }
+        #div2{
+            display: -webkit-box;
+            height: 400px;
+            width: 100%;
+        }
+        #div3{
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            width: 100%;
+            height:500px;
+        }
+    </style>
+</head>
+<body>
+    <!--多栏布局-->
+    <div id="div1">
+       <p>示例1：这是第一段文字这是第一段文字这是第一段文字这是第一段文字这是第一段文字这是第一段文字这是第一段文字
+        这是第一段文字这是第一段文字这是第一段文字这是第一段文字这是第一段文字这是第一段文字这是第一段文字这是第一段文字
+        这是第一段文字这是第一段文字这是第一段文字这是第一段文字这是第一段文字这是第一段文字这是第一段文字这是第一段文字
+        这是第一段文字这是第一段文字这是第一段文字这是第一段文字这是第一段文字这是第一段文字这是第一段文字这是第一段文字
+        这是第一段文字这是第一段文字这是第一段文字这是第一段文字这是第一段文字这是第一段文字这是第一段文字这是第一段文字
+        这是第一段文字这是第一段文字这是第一段文字这是第一段文字这是第一段文字这是第一段文字这是第一段文字这是第一段文字
+        这是第一段文字这是第一段文字这是第一段文字这是第一段文字这是第一段文字这是第一段文字这是第一段文字这是第一段文字
+       </p>
+       <p>示例2：这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字
+        这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字
+        这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字
+        这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字
+        这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字
+        这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字
+        这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字
+        这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字
+        这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字
+        这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字
+        这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字这是第二段文字
+       </p>
+    </div>
+    <!--盒布局-->
+    <div id="div2">
+        <div style="width: 20%;background-color: brown;"></div>
+        <div style="width:60%;background-color:aquamarine"></div>
+        <div style="width: 20%;background-color: greenyellow;"></div>
+    </div>
+    <!--弹性盒模型-->
+    <div id="div3">
+        <div style="-webkit-box-flex: 3;background-color: brown;"></div>
+        <div style="-webkit-box-flex: 1;background-color:aquamarine"></div>
+        <div style="-webkit-box-flex: 2;background-color: greenyellow;"></div>
+    </div>
+</body>
+</html>
