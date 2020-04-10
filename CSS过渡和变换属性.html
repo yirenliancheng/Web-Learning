@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS过渡和变换属性</title>
+    <style type="text/css">
+     div{
+          height: 100px;
+          width: 200px;
+          background-color: yellowgreen;
+          transform: rotate(45deg,30deg) scale(1.5,0.75) translate(100px,200px) skew(60deg 45deg); 
+             /*translate：平移变换；scale：缩放变换；rotate：旋转变换；skew：倾斜变换  谷歌浏览器目前支持translate*/
+          transform-origin: center 200px;
+             /*定义变换的起点：x|y：left、right、center、px和百分比；z只能用px格式*/
+          transition: background-color 1s linear 2s,width 2s ease-in-out 1s;
+             /*属性过渡：需要过渡的CSS属性，过渡的时间，过渡的线性函数，延迟时间*/
+        }
+    div:hover{
+        background-color: red;
+        width:400px;
+    }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
